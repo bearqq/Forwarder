@@ -45,6 +45,7 @@ def Home():
                     resp.set_header(n, v)
                     if n == 'Set-Cookie':
                         cookieAdded = True
+            resp.set_header("Access-Control-Allow-Origin", "*")
             return content
         except socket.timeout:
             pass
